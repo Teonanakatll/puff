@@ -4,6 +4,13 @@
     <img src="images/myimage.jpg" alt="myimage">
 </picture>
 
+ /* Фолбэк — используется обычный формат (например, jpg) */
+ .my-element {
+     background-image: url('images/girl.jpg');
+     background-size: cover; /* Изображение полностью покрывает элемент */
+     background-position: center; /* Центрирование изображения */
+ }
+
 <!-- css для установки вариантов форматов background-image -->
 .background-image {
     background-image: url('image.jpg'); /* Фолбэк для JPEG */
@@ -21,7 +28,7 @@
     }
 }
 
-<!-- scss -->
+<!-- sass -->
 .background-image {
     background-image: url('image.jpg'); // Фолбэк для JPEG
 

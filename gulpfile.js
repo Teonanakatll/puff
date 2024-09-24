@@ -41,7 +41,7 @@ function fonts() {
 function images() {
 	return src(['app/images/src/*.*', '!app/images/src/*.svg'])
 		.pipe(newer('app/images'))  // проверяет есть ли данные картинки в dist
-		.pipe(avif({ quality : 50 }))
+		.pipe(avif({ quality : 70 }))
 
 		.pipe(src('app/images/src/*.*'))
 		.pipe(newer('app/images'))  // проверяет есть ли данные картинки в dist
@@ -154,5 +154,5 @@ exports.watching = watching;
 
 // последовательная серия, сначало удаление потом очистка
 exports.build = series(cleanDist, building);
-// данные таски включаются автоматически при запуске галпа
-exports.default = parallel(styles, images, scripts, pages, watching)  // паралельное выполнение тасков
+// СНАЧАЛО STYLES !!!  данные таски включаются автоматически при запуске галпа
+exports.default = series(styles, parallel(images, scripts, pages, watching))  // паралельное выполнение тасков

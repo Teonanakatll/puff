@@ -1,34 +1,205 @@
-.main
-	padding: 0
-	.inner
-		margin: 0
-		color: #fff
+section
+	background: linear-gradient(60deg, #150E18, #3B2045)
+	width: 100%
+	height: 100vh
+	display: flex
+	justify-content: center
 
-body
-	background-color: #000
-	color: #fff
+.container-fluid
+	max-width: 1280px
+	margin: 0
+	padding: 0 96px
+	position: relative
+	@include media-breakpoint-down(lg)
+		padding: 0 50px
+	@include media-breakpoint-down(md)
+		padding: 0 20px
 
-.tesla, .sony
-	width: 100px
-	fill: red
-	transition: 3s ease-out
-	&:hover
-		fill: green
+.top
+	padding-top: 20px
+	// background-color: $accent
+	display: flex
+	align-items: center
+	justify-content: space-between
+	&__logo
+		width: 122px
 
-	@include media-breakpoint-down(lg) 
-		fill: #00CE9EFF
+		display: block
+		.logo
+			width: 112px
+			height: 13px
+	&__menu
+		z-index: 5
+		width: 86px
+		position: relative
+		padding: 0
+		left: 35px
+		font-family: clean-p
+		text-transform: uppercase
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&__lines
+		width: 24px
+		height: 16px
+		display: flex
+		flex-direction: column
+		align-items: start
+		justify-content: space-between
+		.line
+			width: 24px
+			height: 2px
+			background: #fff
+			border-radius: 2px
+		.line2
+			width: 16px
+
+.right
+	font-size: 14px
+	&__block
+		height: 100vh
+		width: 176px
+		background-color: #463A4A
+		position: absolute
+		top: 0
+		right: 0
+	&__window
+		width: calc($index * 15.35)
+		height: 68.35%
+		// width: 350px
+		// height: 508px
+		background: rgba(#484649, .7)
+		position: absolute
+		right: 0
+		border-radius: 70px
+		backdrop-filter: blur(30px)
+		top: 146px
+		// top: 19.7vh
+		top: calc($index * 6)
+	&__body
+		height: 100%
+		flex-direction: column
+		display: flex
+		align-items: start
+		justify-content: space-around
+		// margin-top: 85px
+		margin-top: calc($index * .5)
+		padding-bottom: calc($index * 8.5)
+		margin-left: 29px
+	&__logo
+		width: 112px
+		height: 13px
+		// margin-bottom: 33.4px
+	&__text
+		// margin-bottom: 54px
+		span
+			font-weight: 800
+	&__selector
+		width: calc(100% - 12px)
+		// height: 137px
+		height: 27%
+		background: #817885
+		border: 1px solid #817885
+		border-radius: 70px
+		position: absolute
+		bottom: 0
+		margin: 0 6px 6px
+		display: flex
+		align-items: center
+		justify-content: center
+	&__buttons
+		width: calc(100% - 12px)
+		height: calc(100% - 12px)
+		background: #000
+		border-radius: inherit
+		position: relative
+		overflow: hidden
+		display: flex
+		&::after
+			content: ''
+			width: 6px
+			height: 100%
+			background: #817885
+			position: absolute
+			top: 0
+			left: 50%
+			transform: translateX(-50%)
+	&__btn
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 50%
+		height: 100%
+		overflow: hidden
+		picture
+			width: 100%
+			height: 100%
+			img
+				height: 100%
+				width: auto
+				object-fit: cover
+		.girl2
+			position: relative
+			left: 10px
 
 
-.nasa
-	height: 100px
-	width: 100px
-	margin-left: 30px
-	opacity: 0.5
-	transition: 3s ease-out
-	&:hover
-		transform: scale(1.5)
-		opacity: 1
+.see
+	height: 48px
+	// width: 232.5px
+	border: 3px solid #fff
+	border-radius: 10em
+	display: flex
+	align-items: center
+	justify-content: space-between
+	font-size: 14px
+	font-weight: 500
+	box-sizing: content-box
+	padding: 0 1.5px
+	&__svg
+		// background-color: $accent
+		fill: $accent
+	&__text
+		margin-left: 9px
+		margin-right: 15px
 
-.test 
-	background-color: $accent
-	// margin-right: $gutter
+.front
+	// position: relative
+	&__label
+		width: calc($index * 16.17)
+		height: calc($index * 16.07)
+		margin-top: calc($index * 2.7)
+		@include media-breakpoint-down(md)
+			position: relative
+			z-index: 100
+	&__hero
+		position: absolute
+		bottom: 0
+		left: calc($index * 13.2)
+		left: 50%
+		transform: translateX(-50%)
+		picture
+			display: block
+			max-height: 100%
+			img
+				height: 103vh
+				width: auto
+				
+
+// Если нужно использовать <picture> как фон для элемента
+// .picture-container {
+//     width: 100%; /* Задайте нужные размеры для контейнера */
+//     max-width: 600px;
+//     height: 400px; /* Высота контейнера */
+//     position: relative; /* Устанавливаем позиционирование для последующих элементов */
+//     overflow: hidden; /* Обрезаем изображение, если оно выходит за пределы контейнера */
+// }
+
+// .picture-container img {
+//     width: 100%; /* Изображение растягивается на всю ширину контейнера */
+//     height: 100%; /* Изображение растягивается на всю высоту контейнера */
+//     object-fit: cover; /* Обрезает изображение, чтобы оно полностью заполнило контейнер */
+//     display: block;
+// }
+
+
+
